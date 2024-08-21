@@ -3,6 +3,7 @@ import networkx as nx
 import matplotlib.pyplot as plt
 import numpy as np
 from dfs import DFS 
+from bfs import BFS
     
 
     
@@ -36,9 +37,9 @@ class Generate_Graphs:
 
 
 # Initialize the graph. 
-graph = Generate_Graphs().generate_connected_graph(8,7)
+graph = Generate_Graphs().generate_connected_graph(20,19)
 # for line in nx.generate_adjlist(graph): 
 #     print(line)
 positions = nx.spring_layout(graph)
 
-Visualize().visualize_search(order=DFS(graph).dfs_recursive_pre(0),positions=positions, title='Recursive DFS Algorithm',graph=graph)
+Visualize().visualize_search(order=BFS(graph).bfs(0),positions=positions, title='Recursive DFS Algorithm',graph=graph)
